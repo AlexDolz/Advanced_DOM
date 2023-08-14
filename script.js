@@ -81,3 +81,27 @@ logo.classList.contains('class');
 
 // Dont use
 logo.className = 'jonas'; // override all classes
+
+// **************** Types of events and events handlers *************
+
+const h1 = document.querySelector('h1');
+
+// 1 solution
+// h1.addEventListener('mouseenter', () => {
+//   alert('AddEventListener: Great! You are reading the heading');
+// });
+
+// 2 solution old school (we cant remove here event)
+// h1.onmouseenter = () => {
+//   alert('AddEventListener: Great! You are reading the heading');
+// };
+
+// const alertH1 = () => {
+//   alert('AddEventListener: Great! You are reading the heading');
+// };
+
+// h1.addEventListener('mouseenter', alertH1);
+
+// setTimeout(() => {
+//   h1.removeEventListener('mouseenter', alertH1);
+// }, 300);
