@@ -108,74 +108,89 @@ message.innerHTML =
 
 // ********************* Bubbling and capturing ********************
 // Example with bubbling and capturing
-const randomInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
+// const randomInt = (min, max) =>
+//   Math.floor(Math.random() * (max - min + 1) + min);
 
-const randomColor = () =>
-  `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+// const randomColor = () =>
+//   `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
 
-document.querySelector('.nav__link').addEventListener('click', e => {
-  this.StylePropertyMap.backgroundColor = randomColor();
-  console.log('LINK', e.target, e.currentTarget);
-  console.log(e.currentTarget === this);
+// document.querySelector('.nav__link').addEventListener('click', e => {
+//   this.StylePropertyMap.backgroundColor = randomColor();
+//   console.log('LINK', e.target, e.currentTarget);
+//   console.log(e.currentTarget === this);
 
-  // Stop propagation
-  // e.stopPropagation(); // to disable bubbling, in practice not good idea
-});
-document.querySelector('.nav__links').addEventListener('click', e => {
-  this.StylePropertyMap.backgroundColor = randomColor();
-  console.log('CONTAINER', e.target.e.currentTarget);
-});
-document.querySelector('.nav').addEventListener(
-  'click',
-  e => {
-    this.StylePropertyMap.backgroundColor = randomColor();
-    console.log('NAV', e.target, e.currentTarget);
-  },
-  true
-);
+//   // Stop propagation
+//   // e.stopPropagation(); // to disable bubbling, in practice not good idea
+// });
+// document.querySelector('.nav__links').addEventListener('click', e => {
+//   this.StylePropertyMap.backgroundColor = randomColor();
+//   console.log('CONTAINER', e.target.e.currentTarget);
+// });
+// document.querySelector('.nav').addEventListener(
+//   'click',
+//   e => {
+//     this.StylePropertyMap.backgroundColor = randomColor();
+//     console.log('NAV', e.target, e.currentTarget);
+//   },
+//   true
+// );
 
 // *********************** DOM Traversing ***************************
-const h1 = document.querySelector('h1');
+// const h1 = document.querySelector('h1');
 
 // Going downwards: child
-console.log(h1.querySelectorAll('.highlight'));
-console.log(h1.childNodes);
-console.log(h1.children);
-h1.firstElementChild.style.color = 'white';
+// console.log(h1.querySelectorAll('.highlight'));
+// console.log(h1.childNodes);
+// console.log(h1.children);
+// h1.firstElementChild.style.color = 'white';
 
-// Going upwards: parents
-console.log(h1.parentNode);
-console.log(h1.parentElement);
+// // Going upwards: parents
+// console.log(h1.parentNode);
+// console.log(h1.parentElement);
 
-h1.closest('.header').style.backgroundColor = 'white';
+// h1.closest('.header').style.backgroundColor = 'white';
 
 // Going sideways: siblings
-console.log(h1.previousElementSibling);
-console.log(h1.nextElementSibling);
+// console.log(h1.previousElementSibling);
+// console.log(h1.nextElementSibling);
 
-console.log(h1.previousSibling);
-console.log(h1.nextSibling);
+// console.log(h1.previousSibling);
+// console.log(h1.nextSibling);
 
-console.log(h1, parentElement.children);
-[...h1.parentElement.children].forEach(el => {
-  if (el !== h1) {
-    el.style.transform = 'scale(0.5)';
-  }
-});
+// console.log(h1, parentElement.children);
+// [...h1.parentElement.children].forEach(el => {
+//   if (el !== h1) {
+//     el.style.transform = 'scale(0.5)';
+//   }
+// });
 
 // *************** Sticky navigation: Intersection Observer API*******
 
-const obsCallback = function (entries, observer) {
-  entries.forEach(entry => {
-    console.log(entry);
-  });
-};
+// const obsCallback = function (entries, observer) {
+//   entries.forEach(entry => {
+//     console.log(entry);
+//   });
+// };
 
-const obsOptions = {
-  root: null,
-  threshold: [0, 0.2],
-};
+// const obsOptions = {
+//   root: null,
+//   threshold: [0, 0.2],
+// };
 
-const observer = new IntersectionObserver(obsCallback, obsOptions);
-observer.observe(section1);
+// const observer = new IntersectionObserver(obsCallback, obsOptions);
+// observer.observe(section1);
+
+// **************************** Livecycle DOM events ****************************
+// document.addEventListener('DOMContentLoaded', function (e) {
+//   console.log('HTMl parsed and DOM tree built!', e);
+// });
+
+// window.addEventListener('load', function (e) {
+//   console.log('Page fully loaded', e);
+// });
+
+// window.addEventListener('beforeunload', function (e) {
+//   e.preventDefault();
+//   console.log(e);
+//   e.returnValue = '';
+// });
